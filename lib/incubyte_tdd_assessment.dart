@@ -14,12 +14,23 @@ class StringCalculator {
     }
 
     final numberList = numbersToParse.split(RegExp(delimiter));
+    final negativeNumbers = <int>[];
     int sum = 0;
+
     for (final numStr in numberList) {
       if (numStr.isNotEmpty) {
-        sum += int.parse(numStr);
+        final number = int.parse(numStr);
+        if (number < 0) {
+          negativeNumbers.add(number);
+        }
+        sum += number;
       }
     }
+
+    if (negativeNumbers.isNotEmpty) {
+      throw ArgumentError('negative numbers not allowed ${negativeNumbers.join(',')}');
+    }
+
     return sum;
   }
 }
