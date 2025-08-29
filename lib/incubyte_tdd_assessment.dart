@@ -3,6 +3,11 @@ class StringCalculator {
     if (numbers.isEmpty) {
       return 0;
     }
-    return int.parse(numbers);
+    final numberList = numbers.split(',');
+    int sum = 0;
+    for (final numStr in numberList) {
+      sum += int.parse(numStr);
+    }
+    return sum;
   }
 }
