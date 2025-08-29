@@ -18,4 +18,8 @@ void main() {
   test('should handle new lines between numbers', () {
     expect(StringCalculator.add("1\n2,3"), 6);
   });
+
+  test('should support different delimiters', () {
+    expect(StringCalculator.add("//;\n1;2"), 3);
+  });
 }
