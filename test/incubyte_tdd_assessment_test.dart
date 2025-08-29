@@ -14,4 +14,8 @@ void main() {
   test('should return the sum of two comma-separated numbers', () {
     expect(StringCalculator.add("1,5"), 6);
   });
+
+  test('should handle new lines between numbers', () {
+    expect(StringCalculator.add("1\n2,3"), 6);
+  });
 }
