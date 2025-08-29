@@ -8,5 +8,10 @@ void main() {
 
   test('should return the number itself for a single number', () {
     expect(StringCalculator.add("1"), 1);
+    expect(StringCalculator.add("5"), 5);
+  });
+
+  test('should return the sum of two comma-separated numbers', () {
+    expect(StringCalculator.add("1,5"), 6);
   });
 }
